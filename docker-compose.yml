@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  php_apache:
+    container_name: php_apache
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./App:/var/www/html/
+    ports:
+      - 8080:80
+
+  db:
+    container_name: db
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: NoteTakingApp
+    ports:
+      - "3306:3306"
