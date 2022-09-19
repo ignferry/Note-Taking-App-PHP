@@ -1,21 +1,8 @@
 <?php
 
-//These are the defined authentication environment in the db service
+require_once "core/App.php";
 
-// The MySQL service named in the docker-compose.yml.
-$host = 'db';
+use App\core\App;
 
-// Database use name
-$user = 'root';
-
-//database user password
-$pass = '';
-
-// check the MySQL connection status
-$conn = new mysqli($host, $user, $pass);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo $_GET["url"];
-}
+$app = new App();
 ?>
