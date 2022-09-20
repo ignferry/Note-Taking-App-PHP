@@ -35,7 +35,7 @@ class Router {
         }
 
         if (!$handlerFound) {
-            http_response_code(404);
+            header("Location: /");
             die();
         }
     }

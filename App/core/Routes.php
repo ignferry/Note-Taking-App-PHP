@@ -15,10 +15,10 @@ abstract class Routes {
             "DELETE" => array()
         );
 
-        $this->setRoutes();
+        $this->defineRoutes();
     }
 
-    abstract protected function setRoutes(): void;
+    abstract protected function defineRoutes(): void;
 
     public function handleRoute(string $method, string $path): bool {
         $foundMatch = false;
