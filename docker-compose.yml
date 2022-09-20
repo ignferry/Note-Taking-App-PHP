@@ -15,11 +15,9 @@ services:
 
   db:
     container_name: db
-    image: mysql:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile.database
     restart: always
-    environment:
-      MYSQL_ROOT_USER: root
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: NoteTakingApp
     ports:
       - "3306:3306"
