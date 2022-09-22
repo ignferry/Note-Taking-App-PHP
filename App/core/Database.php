@@ -54,12 +54,12 @@ class Database {
         $this->statement->execute();
     }
 
-    public function resultSet() {
+    public function fetchAll() {
         $this->statement->execute();
         return $this->statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function single() {
+    public function fetch() {
         $this->statement->execute();
         return $this->statement->fetch(PDO::FETCH_ASSOC);
     }
