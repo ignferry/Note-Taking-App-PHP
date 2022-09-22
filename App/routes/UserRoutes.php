@@ -9,7 +9,7 @@ use App\core\Routes;
 class UserRoutes extends Routes {
     protected function defineRoutes(): void {
         $this->get("users", "UserController", "showAllUsers");
-        $this->delete("users/(?P<id>\d+)", "UserController", "deleteUser");
+        $this->delete("users/(?P<userId>\d+)", "UserController", "deleteUser");
         $this->get("profile", "UserController", "showProfilePage");
         $this->put("changePassword", "UserController", "changePassword");
     }

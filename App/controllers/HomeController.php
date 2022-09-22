@@ -8,6 +8,9 @@ use App\core\Controller;
 
 class HomeController extends Controller {
     public function showHomePage() {
+        // GET /
+        // Shows the home page
+        
         $this->view("home");
     }
 }

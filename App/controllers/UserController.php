@@ -16,19 +16,35 @@ class UserController extends Controller {
         $this->userModel = new User();
     }
 
-    /* HANYA CONTOH PEMAKAIAN, NANTI DIDELETE */
-    public function getUserById() {
-        $data = $this->userModel->select(["id", "name", "email"])->where([["id", "=", 1]])->fetch();
-        if (!$data) {
-            http_response_code(500);
-            die();
-        }
-        $this->view("userDashboard", $data);
+    public function showAllUsers() {
+        // GET /users
+        // Shows a list of users
+        // Only accessible by admin
+        // If user is not authenticated, redirect to login page
+        // If user is authenticated but is not admin, redirect to list of notes
+        
     }
 
-    public function createUser() {
-        $this->userModel->create(["name" => "testName", "email" => "tesEmail", "password" => "tesPassword"])->execute();
-        $this->view("account");
+    public function deleteUser(int $userId) {
+        // DELETE /users/<userId>
+        // Deletes user with the specified id, redirects to list of users
+        // If user is not authenticated, redirect to login page
+        // If user is authenticated but is not admin, redirect to list of notes
+
+    }
+
+    public function showProfilePage() {
+        // GET /profile
+        // Shows a page containing current user data and password change form
+        // If user is not authenticated, redirect to login page
+
+    }
+
+    public function changePassword() {
+        // PUT /changePassword
+        // Changes the password of current authenticated user
+        // Redirects to profile page with success message
+        // If user is not authenticated, redirect to login page
     }
 }
 
