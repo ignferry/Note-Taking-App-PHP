@@ -143,7 +143,6 @@ abstract class Model {
     }
 
     public function fetch() {
-        echo $this->query;
         $this->prepareAndBindAll();
         return $this->db->fetch();
     }
