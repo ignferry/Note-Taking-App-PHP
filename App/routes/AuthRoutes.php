@@ -12,6 +12,7 @@ class AuthRoutes extends Routes {
         $this->get("register", "AuthController", "showRegisterPage");
         $this->post("login", "AuthController", "login");
         $this->post("register", "AuthController", "register");
+        $this->post("logout", "AuthController", "logout");
     }
 }
 

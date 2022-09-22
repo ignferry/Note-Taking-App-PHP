@@ -152,6 +152,10 @@ abstract class Model {
         return $this->db->fetchAll();
     }
 
+    public function checkRowCount() {
+        return $this->db->rowCount();
+    }
+
     private function verifyOp(string $op) {
         return $op == "=" || $op == ">" || $op == "<" || $op == ">=" || $op == "<=";
     }

@@ -17,7 +17,7 @@ class NoteController extends Controller {
 
     public function showAllNotes() {
         // GET /notes
-        // Shows a list of notes owned by the authenticated user
+        // Shows a list of notes owned by the authenticated user ordered by most recent update time first
         // If user is not authenticated, redirect to login page
 
     }
@@ -38,7 +38,7 @@ class NoteController extends Controller {
 
     public function updateNote(int $noteId) {
         // PUT /notes/<noteId>
-        // Receives data of edited note with the specified id and updates its contents in the database
+        // Receives data of edited note (title, content) with the specified id and updates its contents in the database
         // Redirects to list of notes (/notes)
         // If user is not authenticated, redirect to login page
         // If authenticated user is not the owner of the note, redirect to list of notes (/notes)
