@@ -25,7 +25,8 @@ class UserController extends Controller {
         
         if (isset($_SESSION["userId"]) && $_SESSION["isAdmin"]) {
             $users = $this->userModel->selectAll()->where([["is_admin", "=", false]])->fetchAll();
-            $this->view("users/index", $users);
+            $data["users"] = $users;
+            $this->view("users/index", $data);
         }
         else {
             $this->defaultRedirect();
@@ -79,7 +80,8 @@ class UserController extends Controller {
                 die();
             }
             else {
-                $this->view("/users/profile", $currentUser);
+                $data["user"] = $currentUser;
+                $this->view("/users/profile", $data);
             }
         }
         else {

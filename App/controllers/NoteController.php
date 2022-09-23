@@ -23,7 +23,8 @@ class NoteController extends Controller {
 
         if (isset($_SESSION["userId"]) && !$_SESSION["isAdmin"]) {
             $notes = $this->noteModel->selectAll()->where([["writer_id", "=", $_SESSION["userId"]]])->fetchAll();
-            $this->view("notes/index", $notes);
+            $data["notes"] = $notes;
+            $this->view("notes/index", $data);
         }
         else {
             $this->defaultRedirect();
@@ -45,7 +46,8 @@ class NoteController extends Controller {
                 $this->redirectTo("/notes");
             }
             else {
-                $this->view("notes/edit", $noteToEdit);
+                $data["note"] = $noteToEdit;
+                $this->view("notes/edit", $data);
             }
         }
         else {
