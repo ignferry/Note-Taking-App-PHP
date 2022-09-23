@@ -35,8 +35,14 @@ class Router {
         }
 
         if (!$handlerFound) {
-            header("Location: /");
-            die();
+            if ($method == "GET") {
+                header("Location: /");
+                die();
+            }
+            else {
+                http_response_code(404);
+                die();
+            }
         }
     }
 }

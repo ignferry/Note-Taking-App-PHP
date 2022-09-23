@@ -156,6 +156,10 @@ abstract class Model {
         return $this->db->rowCount();
     }
 
+    public function lastInsertId() {
+        return $this->db->lastInsertId();
+    }
+
     private function verifyOp(string $op) {
         return $op == "=" || $op == ">" || $op == "<" || $op == ">=" || $op == "<=";
     }

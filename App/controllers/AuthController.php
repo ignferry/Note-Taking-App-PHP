@@ -20,7 +20,7 @@ class AuthController extends Controller {
         // Shows the login page
         // If user is logged in, redirect to notes (user) or users list (admin)
 
-        if (isset($_SESSION["role"])) {
+        if (isset($_SESSION["userId"])) {
             $this->defaultRedirect();
         }
         else {
@@ -33,7 +33,7 @@ class AuthController extends Controller {
         // Shows the registration page
         // If user is logged in, redirect to notes (user) or users list (admin)
 
-        if (isset($_SESSION["role"])) {
+        if (isset($_SESSION["userId"])) {
             $this->defaultRedirect();
         }
         else {
@@ -65,12 +65,10 @@ class AuthController extends Controller {
                     $_SESSION["isAdmin"] = $userSameEmail["is_admin"];
 
                     if ($_SESSION["isAdmin"]) {
-                        header("Location: /users");
-                        die();
+                        $this->redirectTo("/users");
                     }
                     else {
-                        header("Location: /notes");
-                        die();
+                        $this->redirectTo("/notes");
                     }
                 }
             }
@@ -79,8 +77,7 @@ class AuthController extends Controller {
             $_SESSION["error"] = "All fields must be filled!";
         }
 
-        header("Location: /login");
-        die();
+        $this->redirectTo("/login");
     }
 
     public function register() {
@@ -116,14 +113,13 @@ class AuthController extends Controller {
                                 "name" => $name, 
                                 "email" => $_POST["email"], 
                                 "password" => password_hash($_POST["password"], PASSWORD_BCRYPT)
-                            ]);
+                            ])->execute();
 
                             if (!$this->userModel->checkRowCount()) {
                                 $_SESSION["error"] = "Registration failed!";
                             }
                             else {
-                                header("Location: /login");
-                                die();
+                                $this->redirectTo("/login");
                             }
                         }
                     }
@@ -134,8 +130,7 @@ class AuthController extends Controller {
             $_SESSION["error"] = "All fields must be filled!";
         }
 
-        header("Location: /register");
-        die();
+        $this->redirectTo("/register");
     }
 
     public function logout() {
@@ -144,8 +139,7 @@ class AuthController extends Controller {
 
         session_destroy();
 
-        header("Location: /");
-        die();
+        $this->redirectTo("/");
     }
 }
 

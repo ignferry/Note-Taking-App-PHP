@@ -9,15 +9,23 @@ abstract class Controller {
     }
 
     protected function defaultRedirect() {
-        if (session_status() === PHP_SESSION_NONE) {
+        if (!isset($_SESSION["userId"])) {
+            // Not logged in
             header("Location: /login");
         }
-        else if ($_SESSION["role"] == "admin") {
+        else if ($_SESSION["isAdmin"]) {
+            // Logged in as admin
             header("Location: /users");
         }
-        else { // role == "user"
+        else { 
+            // Logged in as user
             header("Location: /notes");
         }
+        die();
+    }
+
+    protected function redirectTo(string $path) {
+        header("Location: " . $path);
         die();
     }
 }

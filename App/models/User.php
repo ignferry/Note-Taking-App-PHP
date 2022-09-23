@@ -10,11 +10,11 @@ class User extends Model {
     protected string $tableName = "user";
 
     public static function isNameValid(string $name) {
-        return strlen($name) >= 3 && strlen($name <= 100) && ctype_alpha(str_replace(' ', '', $name));
+        return strlen($name) >= 3 && strlen($name) <= 100 && ctype_alpha(str_replace(' ', '', $name));
     }
 
     public static function isEmailValid(string $email) {
-        return preg_match("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/", $email) && strlen($email) <= 255;
+        return filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($email) <= 255;
     }
 
     public static function isPasswordValid(string $password) {
