@@ -119,6 +119,7 @@ class AuthController extends Controller {
                                 $_SESSION["error"] = "Registration failed!";
                             }
                             else {
+                                $_SESSION["success"] = "Registration successful";
                                 $this->redirectTo("/login");
                             }
                         }

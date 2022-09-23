@@ -6,6 +6,7 @@ abstract class Controller {
     protected function view(string $view, array $data = []): void {
         require_once "views/" . $view . ".php";
         unset($_SESSION["error"]);
+        unset($_SESSION["success"]);
     }
 
     protected function defaultRedirect() {
