@@ -1,0 +1,24 @@
+.navbar {
+    position: sticky;
+    display: flex;
+    padding: 20px;
+    border-bottom: 2px solid grey;
+    justify-content:space-between
+}
+
+#navbar-logo {
+    font-size: 2em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1em;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
