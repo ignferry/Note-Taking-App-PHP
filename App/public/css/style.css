@@ -1,7 +1,9 @@
+/* HEADER NAVBAR */
+
 .navbar {
     position: sticky;
     display: flex;
-    padding: 20px;
+    padding: 10px;
     border-bottom: 2px solid grey;
     justify-content:space-between
 }
@@ -15,7 +17,7 @@
     gap: 1em;
 }
 
-.navlinks li {
+.nav-links li {
     list-style: none;
 }
 
