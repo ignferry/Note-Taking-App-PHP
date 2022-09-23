@@ -20,7 +20,8 @@ class Database {
             $this->dbConnection = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbName, $this->user, $this->pass);
             $this->dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            die($e->getMessage());
+            http_response_code(500);
+            die();
         }
     }
 

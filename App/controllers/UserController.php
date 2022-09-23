@@ -112,19 +112,15 @@ class UserController extends Controller {
 
                 if (!$currentPassword || !$newPassword || !$newPasswordConfirm) {
                     $_SESSION["error"] = "All fields must be filled!";
-                    $this->redirectTo("/profile");
                 }
                 else if ($newPassword != $newPasswordConfirm) {
                     $_SESSION["error"] = "New password does not match with confirmation!";
-                    $this->redirectTo("/profile");
                 }
                 else if (!User::isPasswordValid($newPassword)) {
                     $_SESSION["error"] = "New password invalid!";
-                    $this->redirectTo("/profile");
                 }
                 else if (!password_verify($currentPassword, $currentUser["password"])) {
                     $_SESSION["error"] = "Invalid credentials!";
-                    $this->redirectTo("/profile");
                 }
                 else {
                     $this->userModel->update([
@@ -132,8 +128,9 @@ class UserController extends Controller {
                     ])->where([["id", "=", $_SESSION["userId"]]])->execute();
 
                     $_SESSION["success"] = "Password successfully changed";
-                    $this->redirectTo("/profile");
                 }
+
+                $this->redirectTo("/profile");
             }
         }
         else {

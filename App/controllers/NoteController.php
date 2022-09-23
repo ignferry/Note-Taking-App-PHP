@@ -116,13 +116,7 @@ class NoteController extends Controller {
                     "content" => $content
                 ])->where([["id", "=", $noteId]])->fetch();
                 
-                if (!$this->noteModel->checkRowCount()) {
-                    http_response_code(500);
-                    die();
-                }
-                else {
-                    $this->redirectTo("/notes");
-                }
+                $this->redirectTo("/notes");
             }
         }
 
