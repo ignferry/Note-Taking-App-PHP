@@ -1,20 +1,20 @@
 <?php require_once "views/components/header.php"?>
 <div class="registration-page">
-    <form action="/register" method="post">
+    <form id="registration-form" action="/register" method="post">
         <h2>Sign Up</h2>
         <div class="content">
             <div class="input-field">
-                <input type="name" id="name" name="name" placeholder="Name" required>
+                <p><input type="name" id="name" name="name" placeholder="Name" required></p>
             </div>
             <div class="input-field">
-                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <p><input type="email" id="email" name="email" placeholder="Email Address" required></p>
             </div>
             <div class="input-field">
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <p><input type="password" id="password" name="password" placeholder="Password" required></p>
             </div>
-        </div>
-        <div class="action">
-            <button type="submit">Create Account</button>
+            <div class="input-field">
+                <p><input type="submit" id="register" value="Create Account"></p>
+            </div>
         </div>
         <div class="sign-in">
             <p>Already have an account? <a href="/login">Sign in</a><p>
