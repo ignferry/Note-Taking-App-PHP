@@ -1,3 +1,41 @@
+/* GENERAL */
+body {
+    font-family: "Roboto", arial, sans-serif;
+}
+
+.medium-button {
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 1.25em;
+    background-color: white;
+    color: black;
+    
+}
+
+.medium-button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.icon-button:hover {
+    background-color: #c2c0ca;
+    transition: all 0.2s ease;
+    transform: scale(1.25);
+}
+
 /* HEADER NAVBAR */
 
 .navbar {
@@ -187,16 +225,25 @@ input[type="name"]:focus:invalid {
     border-radius: 0 0 4px 4px;
 }
 
-
 /* NOTE INDEX */
+.empty-content-text {
+    margin: 50px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#notes-toolbar {
+    padding: 10px;
+}
+
 #notes-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .short-note {
-    border: black solid 2px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     width: 300px;
     margin: 25px;
 }
@@ -223,7 +270,7 @@ input[type="name"]:focus:invalid {
 }
 
 .short-note-buttons {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
 }

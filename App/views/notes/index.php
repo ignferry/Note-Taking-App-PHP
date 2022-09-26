@@ -1,8 +1,8 @@
 <?php require_once "views/components/header.php"?>
 
-<div class="toolbar">
+<div id="notes-toolbar">
     <form action="/notes" method="post">
-        <button type="submit">Create new note</button>
+        <button type="submit"class="medium-button">Create new note</button>
     </form>
 </div>
 
@@ -10,7 +10,7 @@
 
 <div id="notes-list">
     <?php if(!$data["notes"]) : ?>
-        <span class="empty-content-text">Let's create a new note!</span>
+        <span class="empty-content-text empty-text">Let's create a new note!</span>
 
     <?php else: 
         foreach($data["notes"] as $note) : ?>
@@ -34,9 +34,15 @@
             <div class="short-note-buttons">
                 <form action="/notes/<?php echo $note["id"] ?>" method="post">
                     <input hidden name="_method" value="DELETE">
-                    <button type="submit">Delete</button>
+                    <button class="icon-button" type="submit">
+                        <img src="public/images/trash.svg"></img>
+                    </button>
                 </form>
-                <button class="edit-button" action="/notes/<?php echo $note["id"] ?>/edit">Edit</button>
+                <form action="/notes/<?php echo $note["id"] ?>/edit">
+                    <button class="icon-button" type="submit">
+                        <img src="public/images/edit.svg"></img>
+                    </button>
+                </form>
             </div>
         </div>
     <?php endforeach;
