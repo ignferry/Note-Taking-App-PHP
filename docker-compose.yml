@@ -20,4 +20,4 @@ services:
       dockerfile: Dockerfile.database
     restart: always
     ports:
-      - "3307:3307"
+      - "3307:3306"
