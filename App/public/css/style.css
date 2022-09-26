@@ -10,7 +10,7 @@ body {
     font-size: 1.25em;
     background-color: white;
     color: black;
-    
+    margin: 10px;
 }
 
 .medium-button:hover {
@@ -28,6 +28,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .icon-button:hover {
@@ -272,7 +273,9 @@ input[type="name"]:focus:invalid {
 .short-note {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     width: 300px;
+    height: 300px;
     margin: 25px;
+    position: relative;
 }
 
 .short-note-title-div {
@@ -300,4 +303,27 @@ input[type="name"]:focus:invalid {
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    left: 130px;
+}
+
+/* NOTE EDIT */
+
+.title-field {
+    width: 95%;
+    font-size: 2.5em;
+    padding: 20px;
+    border: transparent solid  0px;
+}
+
+.note-content-div {
+    width: 95%;
+}
+
+.content-field {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    border: transparent solid  0px;
 }
