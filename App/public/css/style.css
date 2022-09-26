@@ -38,12 +38,13 @@ body {
 
 /* HEADER NAVBAR */
 
-.navbar {
+/* .navbar {
     position: sticky;
     display: flex;
     padding: 10px;
     border-bottom: 2px solid grey;
-    justify-content:space-between
+    justify-content:space-between;
+    background-color: pink;
 }
 
 #navbar-logo {
@@ -57,7 +58,7 @@ body {
 
 .nav-links li {
     list-style: none;
-}
+} */
 
 a {
     text-decoration: none;
@@ -102,14 +103,14 @@ a:active:hover {
     text-align: center;
     padding: 20px 0 0 0;
     border-radius: 4px;
-    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .login-form {
     padding: 0 60px;
 }
 
-.input-field {
+.input-field input {
     display: block;
     box-sizing: border-box;
     width: 80%;
@@ -186,7 +187,7 @@ input[type="submit"]:hover {
     text-align: center;
     padding: 20px 0 0 0;
     border-radius: 4px;
-    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .registration-form {
@@ -223,6 +224,32 @@ input[type="name"]:focus:invalid {
     width: 100%;
     padding: 10px 0;
     border-radius: 0 0 4px 4px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.navbar {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar-logo {
+    font-size: 1.5em;
+    margin: 0.6em 0;
+    display: inline-block;
+}
+.nav-links,
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+.nav-links li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+
+.navbar-account {
+    border-right: 1px solid #ccc;
 }
 
 /* NOTE INDEX */
