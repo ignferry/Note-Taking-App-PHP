@@ -1,6 +1,6 @@
 <?php require_once "views/components/header.php"?>
 <div class="registration-page">
-    <form>
+    <form action="/register" method="post">
         <h2>Sign Up</h2>
         <div class="content">
             <div class="input-field">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="action">
-            <button>Create Account</button>
+            <button type="submit">Create Account</button>
         </div>
         <div class="sign-in">
             <p>Already have an account? <a href="/login">Sign in</a><p>
