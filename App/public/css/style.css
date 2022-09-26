@@ -71,7 +71,7 @@ a:active:hover {
     padding: 0 60px;
 }
 
-input {
+.input-field {
     display: block;
     box-sizing: border-box;
     width: 80%;
@@ -185,4 +185,45 @@ input[type="name"]:focus:invalid {
     width: 100%;
     padding: 10px 0;
     border-radius: 0 0 4px 4px;
+}
+
+
+/* NOTE INDEX */
+#notes-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.short-note {
+    border: black solid 2px;
+    width: 300px;
+    margin: 25px;
+}
+
+.short-note-title-div {
+    padding: 20px;
+}
+
+.note-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.note-content {
+    font-size: 1.2em;
+}
+
+.empty-text {
+   color:#8a8b8e; 
+}
+
+.short-note-content-div {
+    padding: 20px;
+}
+
+.short-note-buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }

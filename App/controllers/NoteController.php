@@ -23,6 +23,26 @@ class NoteController extends Controller {
 
         if (isset($_SESSION["userId"]) && !$_SESSION["isAdmin"]) {
             $notes = $this->noteModel->selectAll()->where([["writer_id", "=", $_SESSION["userId"]]])->fetchAll();
+
+            // Shorten long title and contents
+            for ($i = 0; $i < sizeof($notes); $i++) {
+                $title = $notes[$i]["title"];
+                if (!$title) {
+                    $notes[$i]["title"] = "";
+                }
+                else if (strlen($title) > 30) {
+                    $notes[$i]["title"] = substr($title, 0, 27) . "...";
+                }
+
+                $content = $notes[$i]["content"];
+                if (!$content) {
+                    $notes[$i]["content"] = "";
+                }
+                else if (strlen($content) > 50) {
+                    $notes[$i]["content"] = substr($content, 0, 47) . "...";
+                }
+            }
+
             $data["notes"] = $notes;
             $this->view("notes/index", $data);
         }
