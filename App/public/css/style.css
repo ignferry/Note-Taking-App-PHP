@@ -37,6 +37,12 @@ body {
     transform: scale(1.25);
 }
 
+.center {
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+}
+
 /* HEADER NAVBAR */
 
 /* .navbar {
@@ -276,6 +282,7 @@ input[type="name"]:focus:invalid {
     height: 300px;
     margin: 25px;
     position: relative;
+    flex-shrink: 0;
 }
 
 .short-note-title-div {
@@ -285,10 +292,12 @@ input[type="name"]:focus:invalid {
 .note-title {
     font-size: 1.5em;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .note-content {
     font-size: 1.2em;
+    word-wrap: break-word;
 }
 
 .empty-text {
@@ -326,4 +335,28 @@ input[type="name"]:focus:invalid {
     height: fit-content;
     padding: 20px;
     border: transparent solid  0px;
+}
+
+/* PROFILE */
+#profile-div {
+    width: 90%;
+    margin: auto;
+}
+
+#profile-form-div {
+    width: 600px;
+    margin: auto;
+}
+
+.profile-table {
+    margin: 50px;
+}
+
+.profile-table th {
+    text-align: left;
+    padding: 20px;
+}
+
+.profile-table td {
+    padding: 20px;
 }
